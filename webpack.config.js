@@ -31,4 +31,19 @@ module.exports = {
             }
         ]
     }
+
+    // resolve с ошибкой
 };
+
+/** Минифицируем на продакшн **/
+if (NODE_ENV === 'production') {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false, // не нужно предупреждений
+                drop_console: true, // консоль можно убрать
+                unsafe: true // разрешить убрать небезопасные штуки
+            }
+        })
+    )
+}
