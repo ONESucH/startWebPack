@@ -18,10 +18,10 @@ module.exports = {
     },
 
     plugins: [ // импортируем плагины
-        new webpack.DefinePlugin({ //
+        new webpack.DefinePlugin({ // используем компоненты webpack
             NODE_ENV: JSON.stringify(NODE_ENV), // исключаем ошибки
             LANG:JSON.stringify('ru') // ставим язык
-        })
+        }),
     ],
 
     module: { // импортируем модули
